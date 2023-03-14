@@ -1,0 +1,259 @@
+.header {
+  height: 100vh;
+  width: 100%;
+
+  &__container {
+    @include onTablet {
+      padding: 22px 26px;
+    }
+
+    @include onDesktop {
+      padding: 40px 50px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 15px 21px 0;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__logo {
+    height: 24px;
+    width: 24px;
+    position: relative;
+
+    @include onDesktop {
+      height: 50px;
+      width: 50px;
+      margin-right: 34%;
+
+      &:after {
+        display: block;
+        content: "witch of mountain winds";
+        position: absolute;
+        top: 30%;
+        left: 100%;
+        width: 250px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #344f10;
+        margin-left: 12px;
+      }
+    }
+
+    &-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__cart {
+    height: 20px;
+    width: 18px;
+
+    @include hover(transform, scale(1.1));
+
+    @include onDesktop {
+      height: 26px;
+      width: 22px;
+    }
+
+    &-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__menuopen {
+    height: 13px;
+    width: 20px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 500px;
+    object-position: center;
+    object-fit: cover;
+    margin-bottom: 25px;
+
+    @include onDesktop {
+      order: 2;
+      width: 580px;
+      height: 451px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    color: #333;
+    max-width: 280px;
+    margin: 0 auto 10px;
+    padding: 0 5px;
+
+    @include onTablet {
+      max-width: 466px;
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      line-height: 130%;
+      max-width: 480px;
+      text-align: start;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__items {
+    padding: 0 20px;
+
+    @include onDesktop {
+      order: 1;
+    }
+  }
+
+  &__desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      text-align: start;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @extend %buttons;
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: 0.3s;
+
+    &:target {
+      display: block;
+      transform: translateX(0);
+    }
+
+    &-desktop {
+      position: static;
+    }
+  }
+
+  &__main {
+    @include onDesktop {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+  }
+}
+
+.menu {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &__close {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/header/menu-close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 45px;
+  }
+
+  &__items {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #828282;
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    color: #e4dfd3;
+
+    @include onDesktop {
+      border-bottom: 2px solid transparent;
+      color: #344f10;
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      padding: 0 0 3px;
+
+      @include hover(border-color, #333);
+    }
+  }
+}

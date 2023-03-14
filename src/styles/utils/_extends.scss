@@ -1,4 +1,39 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
+%blockTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #344f10;
+}
+
+%blockPara {
   font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #333;
+}
+
+%buttons {
+  display: block;
+  width: 280px;
+  height: 60px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  background-color: #333;
+  text-decoration: none;
+  line-height: 60px;
+  margin: 0 auto;
+
+  @include hover(background-color, #e4dfd3);
+  @include hover(color, #333);
+  @include hover(border, 1px solid #333);
+
+  @include active(background-color, #333);
+  @include active(color, #fff);
+  @include active(transform, scale(0.99));
 }
