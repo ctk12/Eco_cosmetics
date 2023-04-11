@@ -1,0 +1,25 @@
+.about {
+  &__container {
+    margin: 0;
+  }
+
+  &__text {
+    padding: 0 20px;
+  }
+
+  &__title {
+    @extend %blockTitle;
+
+    margin-bottom: 10px;
+  }
+
+  &__para {
+    @extend %blockPara;
+
+    margin-bottom: 30px;
+  }
+
+  &__images {
+    display: none;
+  }
+}
